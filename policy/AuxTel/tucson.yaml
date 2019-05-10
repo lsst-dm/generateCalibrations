@@ -1,0 +1,26 @@
+#
+# Known data types
+#
+dataTypes:
+  [
+  bias, dark, flat
+  ]
+#
+# Bootstrap the calibration directory
+#
+# The files are to be found in dirName, taken to be relative to --dataDir if
+# not an absolute path
+#
+bootstrap :
+  dirName : "bootstrap"
+#
+# Blocks of data which are used together to update the calibrations
+#
+calibBlocks :
+  '2019-03-08' :
+    bias :
+      visits : ["2019030800171..2019030800180"]
+    dark :
+      visits : ["2019030800135..2019030800144"]
+    flat :
+      visits : ["2019030800155..2019030800170"]

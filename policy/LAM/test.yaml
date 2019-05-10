@@ -1,0 +1,38 @@
+#
+# Known data types
+#
+dataTypes:
+  [
+  bias, dark, flat, fiberTrace,
+  ]
+#
+# Bootstrap the calibration directory
+#
+# The files are to be found in dirName, taken to be relative to --dataDir if
+# not an absolute path
+#
+bootstrap :
+  dirName : "bootstrap"
+  arms : [r1]
+  detectorMapFmt : pfsDetectorMap-000001-%s.fits
+#
+# Blocks of data which are used together to update the calibrations
+#
+calibBlocks :
+  rhl :
+    bias :
+      visits : ["3138..3153"]
+    dark :
+      visits : [3154, 3155, 3156, 3157, 3158]
+    flat :
+      visits : ["5699..5824:3"]
+      config : minSNR=50
+    fiberTrace :
+      visit : 5694
+      configs : [trace.apertureFWHM=3]
+#    arc : 
+
+  plate1023_1:
+    fiberTrace :
+      visit : 56940
+      configs : [trace.apertureFWHM=3]
